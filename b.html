@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        select {
+            display: none;
+        }
+    </style>
+</head>
+<body>            
+    <label>
+        <input id="school" name="status" type="radio">
+        School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio">
+        Company
+    </label>
+
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+
+
+    <script>
+        var school =document.getElementById("school");
+        var company =document.getElementById("company");
+        var schoolse =document.getElementById("school-select");
+        var companyse =document.getElementById("company-select");
+        var select =document.getElementsByTagName("select");
+       //console.log(select)
+       function sc() {
+            //schoolse.removeAttribute ("display")不起效
+            //select.setAttribute ("display","block")还是不起效
+            //select.removeAttribute("display");还是不起效
+            //select.style.display = "block"依旧失效
+            schoolse.style.display ="inline";
+            companyse.style.display = "none"
+           //schoolse.setAttribute ("display","inline")失效
+        }
+        function co(){
+            schoolse.style.display ="none";
+            companyse.style.display = "inline"
+        }
+        school.addEventListener("change",sc);
+        company.addEventListener("change",co)
+
+
+        
+    </script>
+</body>
+</html>

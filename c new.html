@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        .palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .palette li {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>            
+    <ul class="palette">
+        <li style="background-color:crimson"></li>
+        <li style="background-color:bisque"></li>
+        <li style="background-color:blueviolet"></li>
+        <li style="background-color:coral"></li>
+        <li style="background-color:chartreuse"></li>
+        <li style="background-color:darkolivegreen"></li>
+        <li style="background-color:cyan"></li>
+        <li style="background-color:#194738"></li>        
+    </ul>
+
+    <p class="color-picker"></p>
+
+    <script>
+       
+        var ul = document.querySelector("ul");
+         function picker(ev){ //这里如果不设置参数就会迷之报错...但是参数又不能像例子里的e那样在调用function时还会报错..强行把之后弄得event设为参数就好了..莫名其妙
+                var t = ev.target;
+                var c = t.style.backgroundColor;
+                var p = document.getElementsByClassName("color-picker")[0]
+                p.innerHTML = c;
+                p.style.color = c;
+
+            }
+        
+        ul.onclick = function(){
+        var ev = event || window.event;
+        var get = ev.target ;
+        if(get.nodeName.toLocaleLowerCase() == "li"){
+            picker(ev)}
+            }
+        /*var ev=event || window.event;
+        var target=ev.target ;
+        if(target.nodeName.toLocaleLowerCase() == "li"){
+            picker()
+        }
+        就是找自己的时候必须在事件里找自己.不然会报错..
+        */
+        
+        
+    </script>
+</body>
+</html>

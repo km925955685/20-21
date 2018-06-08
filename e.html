@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #box{position: relative;}
+        #pic{width:480px;
+            height:480px;
+            background-color: yellow;
+            background-image: url(erik_ce204002.jpg);
+            background-repeat: no-repeat;
+            }
+        
+        </style>
+
+    </head>
+
+    <body>
+        <div id="box">
+            <div id="pic"></div>
+        </div>
+        
+        <script>
+            var laugh =document.getElementById("pic");
+            var number =480;
+            var i=1
+            setInterval(move,100)
+            function move(){
+                if(i<16){
+                i+=1;
+                console.log(number);
+                number +=480;
+                laugh.style.cssText +=";background-position: 0px -"+number+"px"}
+                else if (i>=16 && i<31)
+                {i+=1;
+                console.log(number);
+                number-=480;
+                laugh.style.cssText +=";background-position: 0px -"+number+"px"}
+                else if(i=31)
+                {i=1;
+                console.log(number);
+                number-=480;
+                laugh.style.cssText +=";background-position: 0px -"+number+"px"}
+
+            }
+            
+            
+            //background-position: 0px -100px
+
+        </script>
+    </body>
+</html>
