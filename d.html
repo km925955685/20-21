@@ -16,13 +16,16 @@
             function fade() {
                 
                 number = --number;
-                console.log(number);
+                //console.log(number);
+                var num=number /10
                 if(number == 0){
                     clearInterval(time);
                    btn.innerHTML = "淡入";
-                   status =2    ;             
+                   status =2    ;
+                   num = 0.0;             
                 };
-                fade.style.opacity = "number / 10 ";//无能力解决的bug这玩意的数字怎么设都是报错
+                
+                obj.style.cssText+= ";opacity:"+num +";"
             };
 
             function fadeout(){
@@ -32,13 +35,13 @@
                    btn.innerHTML = "淡出";
                    status =1    ;             
                 };
-                fade.style.opacity = "number / 10 ";}
+                obj.style.opacity = number / 10 ;}
             
             btn.onclick=function(){
                 if(status ==1){status =3;
-                time =  setInterval (fade , 1000);}
+                time =  setInterval (fade , 100);}
                 else if(status ==2){status =3;
-                time = setInterval (fadeout , 1000);
+                time = setInterval (fadeout , 100);
 
                 }
             }
